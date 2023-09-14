@@ -10,8 +10,8 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         viewModel = new MainPageViewModel();
 
-        viewModel.welcomeMessage = "Venta de casas";
-        viewModel.imageUrl = "https://images.vexels.com/media/users/3/128197/isolated/preview/f7bab71f1e4284e313bd7ddb4fa085e9-icono-de-lupa-inmobiliaria-casa.png";
+			viewModel.welcomeMessage = Preferences.Get("nombre", string.Empty);;
+			viewModel.imageUrl = Preferences.Get("img", string.Empty);
        	BindingContext = viewModel;
     }
 

@@ -57,3 +57,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Examen.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[d:/Escritorio/EXAMENT/Examen/SplashScreenPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Examen.SplashScreenPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SplashScreenPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SplashScreenPage.xaml

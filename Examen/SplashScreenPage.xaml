@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen"
+             BackgroundColor="#282A3A"
+             x:Class="Examen.SplashScreenPage">
+    
+<StackLayout VerticalOptions="CenterAndExpand">
+    <Image Source="{Binding ImageUrl}"
+           SemanticProperties.Description="Cute dot net bot waving hi to you!"
+           HeightRequest="200"
+           VerticalOptions="Start" />
+
+    <Label Text="{Binding WelcomeMessage}" 
+           HorizontalOptions="Center" 
+                          FontSize="30"
+           VerticalOptions="Start" />
+
+    <ActivityIndicator IsRunning="true" Color="White" WidthRequest="50" HeightRequest="50"/>
+</StackLayout>
+
+    
+</ContentPage>

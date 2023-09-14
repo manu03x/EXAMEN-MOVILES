@@ -19,6 +19,8 @@ namespace Examen.Pages
 
         private void GuardarCambios_Clicked(object sender, EventArgs e)
         {
+            Preferences.Set("nombre", viewModel.WelcomeMessage);
+            Preferences.Set("img", viewModel.ImageUrl);
             // Obtén los nuevos valores ingresados por el usuario desde las entradas
             string nuevoMensaje = viewModel.WelcomeMessage;
             string nuevaImageUrl = viewModel.ImageUrl;
