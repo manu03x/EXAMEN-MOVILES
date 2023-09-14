@@ -1,0 +1,68 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.Pages.Clientes"
+             Title="Agenda de contactos">
+    <ScrollView>
+
+        <StackLayout Padding="10" BackgroundColor="#282A3A">
+
+            <Label Text="Nombre:" FontAttributes="Bold" />
+            <Entry x:Name="nombreEntry" Placeholder="Ingrese el nombre del contacto"/>
+
+            <Label Text="Dirección:" FontAttributes="Bold" />
+            <Entry x:Name="direccionEntry" Placeholder="Ingrese la dirección del contacto"/>
+
+            <Label Text="Teléfono:" FontAttributes="Bold" />
+            <Entry x:Name="telefonoEntry" Placeholder="Ingrese el teléfono del contacto"/>
+
+            <Label Text="Correo electrónico:" FontAttributes="Bold" />
+            <Entry x:Name="correoEntry" Placeholder="Ingrese el correo electrónico del contacto"/>
+
+            <Label Text="Imagen:" FontAttributes="Bold" />
+            <Entry x:Name="urlEntry" Placeholder="Ingrese la imagen contacto"/>
+
+
+
+            <Button x:Name="GuardarButton" Text="Guardar" Clicked="Guardar_Clicked"/>
+
+            <Button  Text="Buscar" Clicked="Buscar_Clicked"/>
+
+            <Button Text="Eliminar" Clicked="Eliminar_Clicked"/>
+
+            <Button x:Name="ModificarButton" Text="Modificar" Clicked="Modificar_Clicked" IsEnabled="False"/>
+
+            <Label Text="Lista de contactos:" FontAttributes="Bold"/>
+
+            <ListView x:Name="contactosListView">
+                <!-- ListView.ItemTemplate define cómo se va a mostrar cada elemento de la lista -->
+                <ListView.ItemTemplate>
+                    <!-- DataTemplate define la estructura de cómo se mostrará un elemento en la lista -->
+                    <DataTemplate>
+                        <!-- ViewCell es el contenedor que define cómo se va a visualizar un elemento en la lista -->
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <!-- Imagen -->
+                                    <Image
+                                        Source="{Binding Url, StringFormat='{0}'}"
+                                        SemanticProperties.Description="client img"
+                                        HeightRequest="100"
+                                        WidthRequest="100"
+                                        Aspect="AspectFit" />
+
+                                    <!-- Información -->
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Nombre, StringFormat='Nombre: {0}'}" />
+                                        <Label Text="{Binding Direccion, StringFormat='Dirección: {0}'}" />
+                                        <Label Text="{Binding CorreoElectronico, StringFormat='Correo electrónico: {0}'}" />
+                                        <Label Text="{Binding Telefono, StringFormat='Teléfono: {0}'}" />
+                                    </StackLayout>
+                                </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

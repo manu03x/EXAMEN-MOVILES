@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.Pages.Config">
+    <ContentPage.Content>
+        <StackLayout Spacing="15" Padding="20" BackgroundColor="#282A3A">
+            <Label Text="Configuración de la Página Principal" FontSize="18" HorizontalOptions="Center" />
+            
+            <Entry Placeholder="Mensaje de Bienvenida" Text="{Binding WelcomeMessage}" />
+            
+            <Entry Placeholder="URL de la Imagen" Text="{Binding ImageUrl}" />
+            
+            <Button Text="Guardar Cambios" Clicked="GuardarCambios_Clicked" BackgroundColor="#C69749" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

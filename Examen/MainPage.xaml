@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.MainPage">
+
+    <StackLayout Spacing="25" Padding="30,20" BackgroundColor="#282A3A">
+        <!-- Botón de Configuración en la esquina superior derecha -->
+
+        <Button x:Name="config"
+                Text="CONFIG"
+                Clicked="OpenConfig"
+                BackgroundColor="#C69749"
+                TextColor="White"
+                HeightRequest="50"
+                WidthRequest="70"
+                HorizontalOptions="End"
+                VerticalOptions="Start"/>
+
+        <Image Source="{Binding ImageUrl}"
+               SemanticProperties.Description="Cute dot net bot waving hi to you!"
+               HeightRequest="200"
+               HorizontalOptions="Center"
+               Aspect="AspectFit"/>
+
+        <!-- Etiqueta de bienvenida -->
+        <Label Text="{Binding WelcomeMessage}"
+               SemanticProperties.HeadingLevel="Level2"
+               SemanticProperties.Description="Welcome to dot net Multi-platform App UI"
+               FontSize="27"
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"/>
+
+        <Button x:Name="clientes"
+                Text="Clientes"
+                Clicked="GoToClientes"
+                BackgroundColor="#C69749"
+                TextColor="White"
+                CornerRadius="10"
+                WidthRequest="200"
+                HeightRequest="40"
+                HorizontalOptions="Center"/>
+
+        <Button x:Name="propiedades"
+                Text="Propiedades"
+                Clicked="GoToPropiedades"
+                BackgroundColor="#C69749"
+                TextColor="White"
+                CornerRadius="10"
+                WidthRequest="200"
+                HeightRequest="40"
+                HorizontalOptions="Center"/>
+
+    </StackLayout>
+</ContentPage>
+

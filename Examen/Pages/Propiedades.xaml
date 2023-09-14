@@ -1,0 +1,75 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.Pages.Propiedades"
+             Title="Propiedades">
+    <ScrollView>
+
+        <StackLayout Padding="10" BackgroundColor="#282A3A">
+
+            <Label Text="Nombre:" FontAttributes="Bold" />
+            <Entry x:Name="nombreEntry" Placeholder="Ingrese el nombre del propiedad"/>
+
+            <Label Text="Descripcion:" FontAttributes="Bold" />
+            <Entry x:Name="descripcionEntry" Placeholder="Ingrese la dirección del propiedad"/>
+
+            <Label Text="Cantidad:" FontAttributes="Bold" />
+            <Entry x:Name="cantidadEntry" Placeholder="Ingrese el teléfono del propiedad"/>
+
+            <Label Text="Precio costo:" FontAttributes="Bold" />
+            <Entry x:Name="costoEntry" Placeholder="Ingrese el correo electrónico del propiedad"/>
+            
+            <Label Text="Precio venta:" FontAttributes="Bold" />
+            <Entry x:Name="ventaEntry" Placeholder="Ingrese el correo electrónico del propiedad"/>
+
+            <Label Text="Imagen:" FontAttributes="Bold" />
+            <Entry x:Name="urlEntry" Placeholder="Ingrese la imagen propiedad"/>
+
+            
+            
+
+
+
+            <Button x:Name="GuardarButton" Text="Guardar" Clicked="Guardar_Clicked"/>
+
+            <Button  Text="Buscar" Clicked="Buscar_Clicked"/>
+
+            <Button Text="Eliminar" Clicked="Eliminar_Clicked"/>
+
+            <Button x:Name="ModificarButton" Text="Modificar" Clicked="Modificar_Clicked" IsEnabled="False"/>
+
+            <Label Text="Lista de propiedades:" FontAttributes="Bold"/>
+
+            <ListView x:Name="propiedadesListView">
+                <!-- ListView.ItemTemplate define cómo se va a mostrar cada elemento de la lista -->
+                <ListView.ItemTemplate>
+                    <!-- DataTemplate define la estructura de cómo se mostrará un elemento en la lista -->
+                    <DataTemplate>
+                        <!-- ViewCell es el contenedor que define cómo se va a visualizar un elemento en la lista -->
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <!-- Imagen -->
+                                    <Image
+                                        Source="{Binding Url, StringFormat='{0}'}"
+                                        SemanticProperties.Description="client img"
+                                        HeightRequest="100"
+                                        WidthRequest="100"
+                                        Aspect="AspectFit" />
+
+                                    <!-- Información -->
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Nombre, StringFormat='Nombre: {0}'}" />
+                                        <Label Text="{Binding Descripcion, StringFormat='Descripcion: {0}'}" />
+                                        <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0} '}" />
+                                        <Label Text="{Binding PrecioVenta, StringFormat='Precio Venta: ${0} MXN'}" />
+                                        <Label Text="{Binding PrecioCosto, StringFormat='Precio de costo: $ {0} MXN'} " />
+                                    </StackLayout>
+                                </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>
